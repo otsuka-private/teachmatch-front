@@ -1,5 +1,12 @@
 import axios from 'axios';
 
+/* APIリクエストをバックエンドを送るときにこれを使用する
+		例：
+		sendRequest("GET", "/teacher/list", {place: "tokyo"}, auth)
+		authはconst auth = getAuth()を送ってください
+*/
+
+
 function sendRequest(method, url, params, auth) {
 	auth.currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
 		// Send token to your backend via HTTPS
