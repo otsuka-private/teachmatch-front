@@ -1,13 +1,23 @@
-import { AppBar as MuiAppBar, Button, Typography, Toolbar } from '@mui/material';
+import { AppBar as MuiAppBar, Typography, Toolbar, Button } from '@mui/material';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 
-// ?: なぜか一回cmd+cして再起動しないと変更が反映されない
-const AppBar = () => {
+const AppBar = (props) => {
+    const { drawerWidth, onClick } = props;
+
     return (
-        <MuiAppBar>
+        <MuiAppBar
+            position="fixed"
+            sx={{
+                width: { sm: `calc(100% - ${drawerWidth}px)` },
+                ml: { sm: `${drawerWidth}px` },
+            }}
+            onClick={onClick}
+        >
             <Toolbar>
-                <Button color='inherit'>Home</Button>
-                <Typography variant="h6" component="div" sx={{ m: '0 auto' }}>Teach Match</Typography>
-                <Button color='inherit' variant='outlined'>Login</Button>
+                <Button color='inherit' sx={{ display: { sm: 'none' } }}><MenuRoundedIcon /></Button>
+                <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, textAlign: 'center', fontWeight: 600 }}>Teach Match</Typography>
+                <Button color='inherit'><PersonRoundedIcon /></Button>
             </Toolbar>
         </MuiAppBar>
     )

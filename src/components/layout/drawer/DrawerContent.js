@@ -1,4 +1,4 @@
-import { List, ListItemIcon, ListItemText, ListItemButton } from '@mui/material';
+import { List, ListItemIcon, ListItemText, ListItemButton, Toolbar, Divider, Typography } from '@mui/material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import { v4 as uuid } from 'uuid';
 
@@ -27,12 +27,24 @@ const dummyPages = [
         title: '講師の検索',
         path: '/teacher-search'
     },
+    {
+        title: '講師のプロフィール',
+        path: '/teacher-profile/teacher-id'
+    },
+    {
+        title: '授業部屋',
+        path: '/classroom'
+    },
 ];
 
 const DrawerContent = () => {
 
     return (
         <>
+            <Toolbar>
+                <Typography variant="body1">Logo?</Typography>
+            </Toolbar>
+            <Divider />
             <List>
                 {dummyPages.map(page => {
 

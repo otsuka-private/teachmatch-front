@@ -1,11 +1,16 @@
-import React from 'react'
+import Head from 'next/head'
+import ClassroomHome from 'components/pages/classroom/ClassroomHome'
 
-const index = () => {
+const Index = () => {
     return (
         <>
-            classroom
+            <Head>
+                <title>授業部屋</title>
+            </Head>
+
+            <ClassroomHome />
         </>
     )
 }
 
-export default index
+export default Index

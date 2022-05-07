@@ -1,17 +1,17 @@
 import { Box } from '@mui/material';
 import { CssBaseline } from '@mui/material';
 import Container from 'components/layout/Container';
-import PersistentDrawer from './drawer/PersistantDrawer';
+import ResponsiveDrawer from './drawer/ResponsiveDrawer';
 
 const Layout = (props) => {
     return (
         <Box>
             <CssBaseline />
-            <PersistentDrawer>
+            <ResponsiveDrawer>
                 <Container>
                     {props.children}
                 </Container>
-            </PersistentDrawer>
+            </ResponsiveDrawer>
         </Box>
     )
 }

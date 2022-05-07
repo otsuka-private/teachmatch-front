@@ -1,16 +1,11 @@
 import { Card, CardContent, Typography, Button, Avatar, CardMedia, Chip, Stack, Box, Grid, CardActionArea } from "@mui/material";
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import CardActionsRight from "components/common/CardActionsRight"
 import { v4 as uuid } from "uuid";
 import FlatContainedButton from "components/common/FlatContainedButton";
 import { blue } from "@mui/material/colors";
 
 const TeacherCard = (props) => {
-    const theme = useTheme();
-    const isLargerThanMd = useMediaQuery(theme.breakpoints.up('md'));
-
     const { name, major, age, sex, subjects, price, message } = props.data;
 
     const profileImageUrl = props.data.profileImageUrl || 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80';

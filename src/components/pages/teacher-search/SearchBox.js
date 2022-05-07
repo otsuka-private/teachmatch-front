@@ -5,8 +5,6 @@ import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LoupeRoundedIcon from '@mui/icons-material/LoupeRounded';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { v4 as uuid } from "uuid";
 import CardActionRight from "components/common/CardActionsRight";
 import SelectBox from "components/common/SelectBox";
@@ -14,10 +12,8 @@ import ResponsiveStack from "components/common/ResponsiveStack";
 import AccourdionBox from "components/common/AccourdionBox";
 import { universities, places, studentTypes, subjects, days } from "assets/dummyDatabase";
 
-const SearchBox = () => {
+const SearchBox = (props) => {
     const [selectedSubjects, setSelectedSubjects] = useState([]);
-    const theme = useTheme();
-    const isLargerThanMd = useMediaQuery(theme.breakpoints.up('md'));
 
     const Chips = (props) => {
         const handleClick = event => setSelectedSubjects(prev => [...prev, event.target.closest('div').id]);
@@ -83,7 +79,7 @@ const SearchBox = () => {
                     </AccourdionBox>
                 </CardContent>
                 <CardActionRight>
-                    <Button fullWidth={isLargerThanMd} variant="contained" size="large" startIcon={<SearchRoundedIcon />}>検索する</Button>
+                    <Button fullWidth={props.isLargerThanMd} variant="contained" size="large" startIcon={<SearchRoundedIcon />}>検索する</Button>
                 </CardActionRight>
             </Card>
         </Box>
