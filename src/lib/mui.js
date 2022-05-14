@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { blue, pink, red } from "@mui/material/colors";
+import { blue, lightBlue, pink, red } from "@mui/material/colors";
 
 export const customTheme = createTheme({
     palette: {
@@ -9,6 +9,19 @@ export const customTheme = createTheme({
         secondary: {
             // red or pink
             main: red[500]
+        },
+        // colors
+        red: {
+            main: red[500]
+        },
+        lightBlue: {
+            main: lightBlue[500]
+        },
+        black: {
+            main: '#000'
+        },
+        white: {
+            main: '#fff'
         }
     },
     typography: {

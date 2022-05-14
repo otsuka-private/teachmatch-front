@@ -69,12 +69,14 @@ const TeacherCard = (props) => {
         <Card>
             <CardActionArea onClick={goToTeacherProfilePage}>
                 <CardMedia component="img" height={16 * 9} image={bannerImageUrl} sx={{ filter: 'brightness(90%)' }} />
-                <CardContent sx={{ position: 'relative' }}>
+                <CardContent sx={{ position: 'relative', pb: 0 }}>
                     <AvatarBox />
-                    <PrifileBox />
-                    <SubjectStack />
-                    <MessageBox />
-                    <PriceBox />
+                    <Box sx={{ transform: 'translateY(-1rem)' }}>
+                        <PrifileBox />
+                        <SubjectStack />
+                        <MessageBox />
+                        <PriceBox />
+                    </Box>
                 </CardContent>
             </CardActionArea>
             {
