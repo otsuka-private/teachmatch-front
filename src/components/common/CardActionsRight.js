@@ -1,6 +1,6 @@
 import { CardActions } from "@mui/material"
 
-const CardActionsFlexRight = (props) => {
+const CardActionsRight = (props) => {
     return (
         <CardActions sx={{ display: 'flex', justifyContent: 'end', ...props.sx }}>
             {props.children}
@@ -8,4 +8,4 @@ const CardActionsFlexRight = (props) => {
     );
 }
 
-export default CardActionsFlexRight
+export default CardActionsRight

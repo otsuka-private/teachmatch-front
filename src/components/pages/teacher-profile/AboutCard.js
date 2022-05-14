@@ -7,7 +7,7 @@ import TextBox from "./TextBox";
 import TabPanel from "components/common/TabPanel";
 
 const AboutCard = (props) => {
-    const { teacher } = prosp;
+    const { teacher } = props;
     const [value, setValue] = useState(0);
     const { message } = teacher;
 
