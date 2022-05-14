@@ -8,12 +8,23 @@ import DetailCard from "components/pages/teacher-profile/DetailCard";
 import PriceCard from "components/pages/teacher-profile/PriceCard";
 import MessageCardPC from "components/pages/teacher-profile/MessageCardPC";
 import { teachers } from 'assets/dummyDatabase';
+import { useEffect, useState } from 'react';
 
 const teacher = teachers[3];
 
 const Home = () => {
+    const [teacherData, setTeacherData] = useState({});
     const theme = useTheme();
     const isLargerThanMd = useMediaQuery(theme.breakpoints.up('md'));
+    useEffect(() => {
+        const getTeacherData = async () => {
+            const res = await fetch('http://126.227.65.161/teacher/profile?id=iWktAruR4DcgAfXbIxZXQQZF0YX2');
+            const result = await res.json();
+            setTeacherData(result.result);
+        }
+
+        getTeacherData();
+    }, []);
 
     return (
         <Grid container spacing={2}>
