@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { blue, grey, lightBlue, red } from "@mui/material/colors";
+import { v4 as uuid } from "uuid";
 import ContainedButton from "components/common/ContainedButton";
 import { auth } from "lib/firebase";
 
@@ -75,6 +76,39 @@ const LoginHome = () => {
             });
     }
 
+    const signInWithSNSButtons = [{
+        text: 'google',
+        icon: <GoogleIcon />,
+        onClick: loginWithGoogle,
+        bgcolor: red[500]
+    }, {
+        text: 'twitter',
+        icon: <TwitterIcon />,
+        onClick: loginWithTwitter,
+        bgcolor: lightBlue[500]
+    }, {
+        text: 'apple',
+        icon: <AppleIcon />,
+        onClick: null,
+        bgcolor: '#000'
+    }, {
+        text: 'faebook',
+        icon: <FacebookIcon />,
+        onClick: null,
+        bgcolor: blue[500]
+    }, {
+        text: 'github',
+        icon: <GitHubIcon />,
+        onClick: null,
+        bgcolor: grey[900]
+    }].map(sns => {
+        const { text, icon, onClick, bgcolor } = sns;
+
+        return (
+            <Button key={uuid()} variant="contained" size="large" sx={{ bgcolor, fontWeight: 700, mb: { xs: '0.5rem' } }} onClick={onClick} startIcon={icon}>{text}</Button>
+        )
+    })
+
     return (
         <Grid container spacing={0}>
             <Grid item xs={0} md={3}></Grid>
@@ -84,19 +118,15 @@ const LoginHome = () => {
                         <Typography variant="body1"><SchoolRoundedIcon sx={{ fontSize: '2rem', color: blue[500], mb: 2 }} /></Typography>
                         <Typography variant="h5" sx={{ mb: '1rem' }}>SNSアカウントでログイン</Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: '20rem', m: '0 auto' }}>
-                            <Button variant="contained" size="large" sx={{ bgcolor: red[500], fontWeight: 700, mb: { xs: '0.5rem' } }} onClick={loginWithGoogle} startIcon={<GoogleIcon />}>Google</Button>
-                            <Button variant="contained" size="large" sx={{ bgcolor: lightBlue[500], fontWeight: 700, mb: { xs: '0.5rem' } }} onClick={loginWithTwitter} startIcon={<TwitterIcon />}>Twitter</Button>
-                            <Button variant="contained" size="large" sx={{ bgcolor: "#000", fontWeight: 700, mb: { xs: '0.5rem' } }} startIcon={<AppleIcon />}>Apple</Button>
-                            <Button variant="contained" size="large" sx={{ bgcolor: blue[500], fontWeight: 700, mb: { xs: '0.5rem' } }} startIcon={<FacebookIcon />} >Facebook</Button>
-                            <Button variant="contained" size="large" sx={{ bgcolor: grey[900], fontWeight: 700, mb: { xs: '0.5rem' } }} startIcon={<GitHubIcon />}>Github</Button>
+                            {signInWithSNSButtons}
                         </Box>
                         <Divider sx={{ m: '1.5rem 0' }}>または</Divider>
                         <Typography variant="h5" sx={{ mb: '1rem' }}>Emailでログイン</Typography>
                         <Grid container spacing={1} sx={{ textAlign: 'left' }}>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} md={6}>
                                 <TextField size="small" fullWidth variant="outlined" margin="dense" label="メールアドレス" inputRef={userIdInput} />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} md={6}>
                                 <TextField size="small" fullWidth variant="outlined" margin="dense" label="パスワード" inputRef={passwordInput} />
                                 <Typography variant="body2" sx={{ textAlign: 'right' }}><Link>パスワードを忘れた場合は</Link></Typography>
                             </Grid>
