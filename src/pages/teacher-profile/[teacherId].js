@@ -1,5 +1,5 @@
 import Head from "next/head"
-import Home from "components/pages/teacher-profile/Home"
+import TeacherProfileHome from "components/pages/teacher-profile/TeacherProfileHome"
 
 // 先生のプロフィール画面
 const Index = () => {
@@ -9,7 +9,7 @@ const Index = () => {
                 <title>講師のプロフィール</title>
             </Head>
 
-            <Home />
+            <TeacherProfileHome />
         </>
     )
 }

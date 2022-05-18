@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 
 const teacher = teachers[3];
 
-const Home = () => {
+const TeacherProfileHome = () => {
     const [teacherData, setTeacherData] = useState({});
     const theme = useTheme();
     const isLargerThanMd = useMediaQuery(theme.breakpoints.up('md'));
@@ -70,4 +70,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default TeacherProfileHome
