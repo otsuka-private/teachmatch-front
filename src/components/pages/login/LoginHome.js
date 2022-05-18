@@ -76,8 +76,7 @@ const LoginHome = () => {
     }
 
     return (
-        // <Container maxWidth='sm'>
-        <Card sx={{ maxWidth: "600px", m: '0 auto' }}>
+        <Card>
             <CardContent sx={{ textAlign: 'center' }}>
                 <Typography variant="body1"><SchoolRoundedIcon sx={{ fontSize: '2rem', color: blue[500], mb: 2 }} /></Typography>
                 <Typography variant="h5" sx={{ mb: '1rem' }}>SNSアカウントでログイン</Typography>
@@ -107,8 +106,6 @@ const LoginHome = () => {
                 </Stack>
             </CardActions>
         </Card>
-        // </Container>
-
     )
 }
 
