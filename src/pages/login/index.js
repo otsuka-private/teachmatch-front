@@ -6,7 +6,7 @@ const Index = () => {
     return (
         <Box>
             <Head>
-                <title>Login</title>
+                <title>ログイン</title>
             </Head>
 
             <LoginHome />
