@@ -76,38 +76,38 @@ const LoginHome = () => {
     }
 
     return (
-        <Container maxWidth='sm'>
-            <Card>
-                <CardContent sx={{ textAlign: 'center' }}>
-                    <Typography variant="body1"><SchoolRoundedIcon sx={{ fontSize: '2rem', color: blue[500], mb: 2 }} /></Typography>
-                    <Typography variant="h5" sx={{ mb: '1rem' }}>SNSアカウントでログイン</Typography>
-                    <Stack direction="row" spacing={2} justifyContent="center">
-                        <Button variant="outlined" size="large" onClick={loginWithGoogle} ><GoogleIcon color="red" /></Button>
-                        <Button variant="outlined" size="large" disabled onClick={loginWithTwitter}><TwitterIcon color='lightBlue' /></Button>
-                        <Button variant="outlined" size="large" disabled ><AppleIcon color="black" /></Button>
-                        <Button variant="outlined" size="large" disabled ><FacebookIcon /></Button>
-                        <Button variant="outlined" size="large" disabled ><GitHubIcon color="black" /></Button>
-                    </Stack>
-                    <Divider sx={{ m: '1.5rem 0' }}>または</Divider>
-                    <Typography variant="h5" sx={{ mb: '1rem' }}>Emailでログイン</Typography>
-                    <Grid container spacing={1} sx={{ textAlign: 'left' }}>
-                        <Grid item xs={12}>
-                            <TextField size="small" fullWidth variant="outlined" margin="dense" label="メールアドレス" inputRef={userIdInput} />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField size="small" fullWidth variant="outlined" margin="dense" label="パスワード" inputRef={passwordInput} />
-                            <Typography variant="body2" sx={{ textAlign: 'right' }}><Link>パスワードを忘れた場合は</Link></Typography>
-                        </Grid>
+        // <Container maxWidth='sm'>
+        <Card sx={{ maxWidth: "600px", m: '0 auto' }}>
+            <CardContent sx={{ textAlign: 'center' }}>
+                <Typography variant="body1"><SchoolRoundedIcon sx={{ fontSize: '2rem', color: blue[500], mb: 2 }} /></Typography>
+                <Typography variant="h5" sx={{ mb: '1rem' }}>SNSアカウントでログイン</Typography>
+                <Stack direction="row" spacing={2} justifyContent="center">
+                    <Button variant="outlined" size="large" onClick={loginWithGoogle} ><GoogleIcon color="red" /></Button>
+                    <Button variant="outlined" size="large" disabled onClick={loginWithTwitter}><TwitterIcon color='lightBlue' /></Button>
+                    <Button variant="outlined" size="large" disabled ><AppleIcon color="black" /></Button>
+                    <Button variant="outlined" size="large" disabled ><FacebookIcon /></Button>
+                    <Button variant="outlined" size="large" disabled ><GitHubIcon color="black" /></Button>
+                </Stack>
+                <Divider sx={{ m: '1.5rem 0' }}>または</Divider>
+                <Typography variant="h5" sx={{ mb: '1rem' }}>Emailでログイン</Typography>
+                <Grid container spacing={1} sx={{ textAlign: 'left' }}>
+                    <Grid item xs={12}>
+                        <TextField size="small" fullWidth variant="outlined" margin="dense" label="メールアドレス" inputRef={userIdInput} />
                     </Grid>
-                </CardContent>
-                <CardActions>
-                    <Stack spacing={2} sx={{ width: '100%' }}>
-                        <ContainedButton fullWidth onClick={loginWithEmail} text='ログイン' />
-                        <Button fullWidth>アカウントを作成</Button>
-                    </Stack>
-                </CardActions>
-            </Card>
-        </Container>
+                    <Grid item xs={12}>
+                        <TextField size="small" fullWidth variant="outlined" margin="dense" label="パスワード" inputRef={passwordInput} />
+                        <Typography variant="body2" sx={{ textAlign: 'right' }}><Link>パスワードを忘れた場合は</Link></Typography>
+                    </Grid>
+                </Grid>
+            </CardContent>
+            <CardActions>
+                <Stack spacing={2} sx={{ width: '100%' }}>
+                    <ContainedButton fullWidth onClick={loginWithEmail} text='ログイン' />
+                    <Button fullWidth>アカウントを作成</Button>
+                </Stack>
+            </CardActions>
+        </Card>
+        // </Container>
 
     )
 }
