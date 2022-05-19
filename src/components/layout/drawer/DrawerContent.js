@@ -12,7 +12,7 @@ const dummyPages = [
     },
     {
         title: '登録',
-        path: '/register'
+        path: '/signup'
     },
     {
         title: 'ログイン',
