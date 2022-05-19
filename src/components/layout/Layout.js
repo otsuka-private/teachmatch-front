@@ -4,12 +4,14 @@ import Container from 'components/layout/Container';
 import ResponsiveDrawer from './drawer/ResponsiveDrawer';
 
 const Layout = (props) => {
+    const { children } = props;
+
     return (
         <Box>
             <CssBaseline />
             <ResponsiveDrawer>
                 <Container>
-                    {props.children}
+                    {children}
                 </Container>
             </ResponsiveDrawer>
         </Box>

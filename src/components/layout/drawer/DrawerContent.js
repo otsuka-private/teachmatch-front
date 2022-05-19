@@ -1,9 +1,12 @@
-import { List, ListItemIcon, ListItemText, ListItemButton, Toolbar, Divider, Typography } from '@mui/material';
+import Image from 'next/image';
+import { Box, List, ListItemIcon, ListItemText, ListItemButton, Toolbar, Divider, Typography } from '@mui/material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import PersonIcon from '@mui/icons-material/Person';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded'
+import SmartToyRoundedIcon from '@mui/icons-material/SmartToyRounded';;
 import { v4 as uuid } from 'uuid';
+import demoIcon from 'assets/demo-icon.webp';
 
 const dummyPages = [
     {
@@ -41,6 +44,11 @@ const dummyPages = [
         path: '/classroom',
         // icon: <FontAwesomeIcon icon="fa-solid fa-chalkboard-user" />
     },
+    {
+        title: 'Playground',
+        path: '/playground',
+        icon: <SmartToyRoundedIcon />
+    },
 ];
 
 const DrawerContent = () => {
@@ -48,7 +56,9 @@ const DrawerContent = () => {
     return (
         <>
             <Toolbar>
-                <Typography variant="body1">Logo?</Typography>
+                <Box sx={{ m: '0 auto' }}>
+                    <Image src={demoIcon} alt='logo' width={40} height={40} />
+                </Box>
             </Toolbar>
             <Divider />
             <List>

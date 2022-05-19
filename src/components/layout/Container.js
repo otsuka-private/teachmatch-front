@@ -2,7 +2,7 @@ import { Container as MuiContainer } from "@mui/material"
 
 const Container = ({ children }) => {
     return (
-        <MuiContainer maxWidth="lg" sx={{ pb: 2, overflowX: 'hidden' }}>
+        <MuiContainer maxWidth="lg" sx={{ pb: '3rem', overflowX: 'hidden' }}>
             {children}
         </MuiContainer>
     )
